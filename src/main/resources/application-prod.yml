@@ -1,0 +1,42 @@
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  file: /var/log/tomcat/sell.log
+#  level:
+#    com.imooc.LoggerTest: debug
+##  path: /var/log/tomcat/
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.154.146:3306/sell?characterEncoding=utf-8&useSSL=false
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.154.146
+    port: 6379
+    password:
+server:
+  context-path: /sell
+wechat:
+  #mpAppId: wxd898fcb01713c658
+  mpAppId: wx7b6c71fb9b2a9ae6
+  mpAppSecret: 387d87ba824edb949c10be1637456be8
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://hjgpond.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus: 3O0ehZAhwI85B-VTBKrMIogCpboJzOrqSR5IW0kt5FY
+projectUrl:
+  wechatMpAuthorize: http://hjgpond.natapp1.cc
+  wechatOpenAuthorize: http://hjgpond.natapp1.cc
+  sell: http://hjgpond.natapp1.cc
+logging:
+  level:
+    com.imooc.dataobject.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
